@@ -1,0 +1,31 @@
+[package]
+name = "of"
+version = "0.1.0"
+edition = "2021"
+default-run = "repl"
+
+[[bin]]
+name = "repl"
+path = "src/bin/repl.rs"
+
+[lib]
+path = "src/lib.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# cranelift = "0.104.1"
+# cranelift-jit = "0.104.1"
+# cranelift-module = { version = "0.104.1", features = ["serde", "hashbrown", "serde_derive"] }
+# cranelift-native = "0.104.1"
+# peg = { version = "0.8.2", features = ["trace"] }
+peg = "0.8.1"
+cranelift = "0.97.1"
+cranelift-module = "0.97.1"
+cranelift-jit = "0.97.1"
+codespan-reporting = { version = "0.11.1", optional = true }
+cranelift-native = "0.97.1"
+
+[profile.release]
+opt-level = 3
+lto = true
